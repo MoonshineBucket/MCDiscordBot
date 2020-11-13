@@ -1,0 +1,6 @@
+getSettings:
+  isEnable: true
+  isEnableCommands: true
+  getToken: 'none'
+  getChannel: 'none'
+  getSplit: '?'
