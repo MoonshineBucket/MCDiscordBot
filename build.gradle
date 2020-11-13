@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.0-SNAPSHOT'
+    }
+}
+
+apply plugin: 'forge'
+
+version = "1.0.0-SNAPSHOT"
+group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "MCDiscordBot"
+
+sourceCompatibility = targetCompatibility = "1.8"
+
+minecraft {
+    version = "1.6.4-9.11.1.964"
+}
+
+compileJava {
+    sourceCompatibility = targetCompatibility = "1.8"
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+processResources {
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod/info'
+
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files('libraries/JDA-4.2.0_168.jar', 'libraries/craftbukkit-1.6.4-R2.0.jar')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

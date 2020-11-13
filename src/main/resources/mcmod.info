@@ -1,0 +1,15 @@
+[
+{
+  "modid": "DiscordBot",
+  "name": "DiscordBot",
+  "version": "1.6.4-1.0.0-SNAPSHOT",
+  "description": "The support DiscordAPI for you server",
+  "credits": "Authored by DreamSmoke/MoonshineBucket",
+  "url": "https://vk.com/moonshinebucket, dmitriy.arta@gmail.com",
+  "updateUrl": "https://github.com/MoonshineBucket/MCDiscordBot",
+  "authorList": ["DreamSmoke/MoonshineBucket"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": []
+}
+]
